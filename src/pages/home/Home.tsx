@@ -1,11 +1,29 @@
 import React from "react";
+import {Box, Button, Grid, Typography} from '@material-ui/core';
 import './Home.css';
 
 function Home(){
     return(
         <>
-            <h1 className="titulo">Home</h1>
-            <img src="https://storage.googleapis.com/atados-v3/user-uploaded/images/8010b1b6-32bc-4dd4-bc11-a4a607c9974c.png" alt="Imagem Tela Inicial" className="img" />
+            <Grid container direction = "row" justifyContent = "center" alignItems = "center" style = {{backgroundColor: "#bb3a3a3d"}}>
+                <Grid alignItems = "center" item xs = {6}>
+                    <Box paddingX={20}>
+                        <Typography variant = "h3" gutterBottom color = "textPrimary" component = "h3" align = "center" style = {{color: "black", fontWeight: "bold" }}>Seja bem vindo(a)!</Typography>
+                        <Typography variant = "h5" gutterBottom color = "textPrimary" component = "h5" align = "center" style = {{color: "black", fontWeight: "bold" }}>Expresse aqui os seus pensamentos e opiniões</Typography>
+                    </Box>
+
+                    <Box display = "flex" justifyContent = "center">
+                        <Box marginRight={1}></Box>
+                        <Button variant = "outlined" style = {{borderColor: "white", backgroundColor: "red", color: "black", fontWeight: "bold", fontSize: "15px"}}>Ver Postagens</Button>
+                    </Box>
+                </Grid>
+                <Grid item xs = {6}>
+                    <img src="https://i.imgur.com/H88yIo2.png" alt="" width = "500px" height = "500px"/>
+                </Grid>
+                <Grid xs = {12} style = {{backgroundColor: "black"}}>
+
+                </Grid>
+            </Grid>
         </>
     );
 }
