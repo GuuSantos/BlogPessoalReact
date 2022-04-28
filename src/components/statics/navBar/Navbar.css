@@ -1,9 +1,17 @@
 .tituloNavbar{
-    color: red!important;
     margin-right: 5px;
 }
 
-.MuiAppBar-colorPrimary{
-     background-color: #1f15153d!important;
+.cursor{
+    cursor: pointer;
+    color: red!important;
+}
 
+.MuiAppBar-colorPrimary{
+     background-color: gray!important;
+
+}
+
+.text-decorator-none{
+    text-decoration: none;
 }
