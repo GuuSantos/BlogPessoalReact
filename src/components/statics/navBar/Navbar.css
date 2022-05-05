@@ -1,10 +1,10 @@
 .tituloNavbar{
     margin-right: 5px;
+    color: white!important;
 }
 
 .cursor{
     cursor: pointer;
-    color: red!important;
 }
 
 .MuiAppBar-colorPrimary{
