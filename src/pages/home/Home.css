@@ -13,8 +13,14 @@
     color: black !important;
     font-weight: bold !important;
     font-size: 15px !important;
+
 }
 
 .postagens{
     background-color: black;
+}
+
+.text-decorator-none{
+    text-decoration: none!important;
+
 }
