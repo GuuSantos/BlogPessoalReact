@@ -1,6 +1,7 @@
 import { Grid, Box, Typography, TextField, Button } from '@material-ui/core';
 import React, { useState, useEffect, ChangeEvent } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import User from '../../models/User';
 import { cadastroUsuario } from '../../services/Service';
 
@@ -47,15 +48,41 @@ function CadastroUsuario() {
         if(confirmarSenha === user.senha && user.senha.length >= 8){
             try{
                 await cadastroUsuario(`usuarios/cadastrar`, user, setUserResult)    
-                alert('Usuario cadastrado com sucesso!')
+                toast.success('Usuário cadastrado com sucesso!', {
+                    position: "top-right",
+                    autoClose: 2000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: false,
+                    draggable: false,
+                    theme: 'colored',
+                    progress: undefined,
+                });
             }catch(error){
                 console.log(`Error: ${error}`)
 
-                alert('Erro ao cadastrar usuário!')
+                toast.error('Erro ao cadastrar usuário!', {
+                    position: "top-right",
+                    autoClose: 2000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: false,
+                    draggable: false,
+                    theme: 'colored',
+                    progress: undefined,
+                });
             }
         }else{
-            alert('Dados Inconsistentes. Verifique as informações de cadastro.')
-
+            toast.error('Dados inconsistentes. Verifique as informações de cadastro', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme: 'colored',
+                progress: undefined,
+            });
             setUser({...user, senha: ""})
             setConfirmarSenha("")
         }
